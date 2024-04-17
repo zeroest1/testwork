@@ -1,7 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -14,31 +13,61 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+var requests = new List<Request>();
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/requests", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    var now = DateTime.Now;
+    return requests.Where(i => !i.IsResolved)
+                    .Select(i => new RequestDTO
+                    (
+                        i.Id,
+                        i.Description,
+                        i.SubmissionTime,
+                        i.ResolutionDueDate,
+                        now > i.ResolutionDueDate || now.AddHours(1) > i.ResolutionDueDate
+                    ))
+                    .OrderByDescending(i => i.ResolutionDueDate);
 })
-.WithName("GetWeatherForecast")
+.WithName("Getrequests")
+.WithOpenApi();
+
+app.MapPost("/requests", (RequestDTO RequestDTO) =>
+{
+    var newRequest = new Request
+    {
+        Id = requests.Any() ? requests.Max(i => i.Id) + 1 : 1,
+        Description = RequestDTO.Description,
+        SubmissionTime = DateTime.Now,
+        ResolutionDueDate = RequestDTO.ResolutionDueDate,
+        IsResolved = false
+    };
+
+    requests.Add(newRequest);
+    return Results.Created($"/requests/{newRequest.Id}", newRequest);
+})
+.WithName("CreateRequest")
+.WithOpenApi();
+
+app.MapPut("/requests/{id}", (int id) =>
+{
+    var request = requests.FirstOrDefault(i => i.Id == id);
+    if (request is null)
+    {
+        return Results.NotFound();
+    }
+    request.IsResolved = true;
+    return Results.NoContent();
+})
+.WithName("ResolveRequest")
 .WithOpenApi();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+record RequestDTO(int Id, string Description, DateTime SubmissionTime, DateTime ResolutionDueDate, bool IsUrgent);

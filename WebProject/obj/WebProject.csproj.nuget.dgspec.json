@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj": {}
+    "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj": {
+    "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj",
+        "projectUniqueName": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj",
         "projectName": "WebProject",
-        "projectPath": "C:\\Users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj",
+        "projectPath": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\WebProject.csproj",
         "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Пользователь\\.vscode\\testwork\\WebProject\\obj\\",
+        "outputPath": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,13 +43,31 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.4, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "xUnit": {
+              "target": "Package",
+              "version": "[2.7.1, )"
+            },
+            "xUnit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.5.8, )"
             }
           },
           "imports": [

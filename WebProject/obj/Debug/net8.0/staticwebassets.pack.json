@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\app.js",
+      "PackagePath": "staticwebassets\\app.js"
+    },
+    {
+      "Id": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebProject.props",
+      "PackagePath": "build\\WebProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebProject.props",
+      "PackagePath": "buildMultiTargeting\\WebProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebProject.props",
+      "PackagePath": "buildTransitive\\WebProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

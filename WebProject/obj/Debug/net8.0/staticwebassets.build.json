@@ -1,11 +1,58 @@
 {
   "Version": 1,
-  "Hash": "j0VIm9RrF8FcrI9hoL6A6p8qaGCJrxZItQdk0Na+lWs=",
+  "Hash": "Zq15Cm8VrAykhGqIwluq+8v9GESOdEKTFZKwC7C9zhI=",
   "Source": "WebProject",
   "BasePath": "_content/WebProject",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebProject\\wwwroot",
+      "Source": "WebProject",
+      "ContentRoot": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\app.js",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.js"
+    },
+    {
+      "Identity": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\index.html",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\users\\Пользователь\\.vscode\\testwork\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }
